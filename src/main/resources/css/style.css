@@ -1,0 +1,61 @@
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ff66b2;
+    -fx-border-width: 2px;
+    -fx-padding: 5px;
+}
+
+
+.table-view .column-header {
+    -fx-background-color: #ff76d8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-width: 0 0 2px 0;
+}
+
+
+.table-row-cell {
+    -fx-background-color: pink;
+    -fx-border-color: #ff66b2;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #ffe6f2;
+}
+
+.table-row-cell:even {
+    -fx-background-color: pink;
+}
+
+
+.table-row-cell:selected {
+    -fx-background-color: #ff66b2;
+    -fx-text-fill: white;
+}
+
+.table-cell {
+    -fx-border-color: #ff66b2;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-padding: 10px;
+    -fx-text-fill: #660033;
+}
+
+
+.table-row-cell:hover {
+    -fx-background-color: #ffb3d9;
+}
+
+.scroll-bar {
+    -fx-background-color: #ffccff;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #ff66b2;
+}
+
+
+.table-view .column-header .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
