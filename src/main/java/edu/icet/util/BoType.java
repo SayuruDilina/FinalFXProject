@@ -1,5 +1,5 @@
 package edu.icet.util;
 
 public enum BoType {
-    PRODUCTS,SUPPLIERS
+    PRODUCTS,SUPPLIERS,ORDERS,USERS
 }

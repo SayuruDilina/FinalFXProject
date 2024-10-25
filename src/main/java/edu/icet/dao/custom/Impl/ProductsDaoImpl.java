@@ -52,4 +52,9 @@ public class ProductsDaoImpl implements ProductsDao {
         session.getTransaction().commit();
         session.close();
     }
+
+    @Override
+    public List<ProductsEntity> search(String email) {
+        return null;
+    }
 }

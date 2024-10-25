@@ -1,8 +1,8 @@
 package edu.icet.dao.custom.Impl;
 
-import edu.icet.dao.custom.SuppliersDao;
+import edu.icet.dao.custom.UsersDao;
 import edu.icet.entity.ProductsEntity;
-import edu.icet.entity.SuppliersEntity;
+import edu.icet.entity.UserEntity;
 import edu.icet.util.HibernateUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,50 +10,49 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public class SuppliersDaoImpl implements SuppliersDao {
-
+public class UsersDaoImpl implements UsersDao {
     @Override
-    public ObservableList<SuppliersEntity> getAll() {
-        ObservableList<SuppliersEntity> suppliersEntityObservableList= FXCollections.observableArrayList();
+    public ObservableList<UserEntity> getAll() {
+        ObservableList<UserEntity> userEntityObservableList= FXCollections.observableArrayList();
         Session session= HibernateUtil.getSession();
         session.beginTransaction();
-        List<SuppliersEntity> suppliersEntities=session.createQuery("from SuppliersEntity", SuppliersEntity.class).list();
-        suppliersEntityObservableList.addAll(suppliersEntities);
+        List<UserEntity> userEntities=session.createQuery("from UserEntity", UserEntity.class).list();
+        userEntityObservableList.addAll(userEntities);
         session.getTransaction().commit();
         session.close();
-        return suppliersEntityObservableList;
+        return userEntityObservableList;
     }
 
     @Override
-    public boolean save(SuppliersEntity suppliersEntity) {
+    public boolean save(UserEntity userEntity) {
         Session session=HibernateUtil.getSession();
         session.beginTransaction();
-        session.persist(suppliersEntity);
+        session.persist(userEntity);
         session.getTransaction().commit();
         session.close();
         return false;
     }
 
     @Override
-    public void update(SuppliersEntity suppliersEntity) {
+    public void update(UserEntity userEntity) {
         Session session=HibernateUtil.getSession();
         session.beginTransaction();
-        session.update(suppliersEntity);
+        session.update(userEntity);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void delete(SuppliersEntity entity) {
+    public void delete(UserEntity userEntity) {
         Session session=HibernateUtil.getSession();
         session.beginTransaction();
-        session.delete(entity);
+        session.delete(userEntity);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public List<SuppliersEntity> search(String email) {
-return null;
+    public List<UserEntity> search(String email) {
+        return List.of();
     }
 }
